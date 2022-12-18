@@ -1,0 +1,21 @@
+type CreatePost @entity(immutable: true) {
+  id: Bytes!
+  _author: Bytes! # address
+  _title: String! # string
+  _media: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type CreateUser @entity(immutable: true) {
+  id: Bytes!
+  _wallet: Bytes! # address
+  _username: String! # string
+  _name: String! # string
+  _bio: String! # string
+  _avatar: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
