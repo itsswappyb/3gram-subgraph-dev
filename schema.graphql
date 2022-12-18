@@ -1,4 +1,4 @@
-type CreatePost @entity(immutable: true) {
+type Post @entity(immutable: true) {
   id: Bytes!
   _author: Bytes! # address
   _title: String! # string
@@ -6,15 +6,17 @@ type CreatePost @entity(immutable: true) {
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!
+  creator: User!
 }
 
-type CreateUser @entity(immutable: true) {
+type User @entity(immutable: true) {
   id: Bytes!
   _wallet: Bytes! # address
   _username: String! # string
   _name: String! # string
   _bio: String! # string
   _avatar: String! # string
+  posts: [Post!]! @derivedFrom(field: "creator")
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!

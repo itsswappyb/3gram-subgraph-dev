@@ -33,24 +33,24 @@ describe("Describe entity assertions", () => {
   // For more test scenarios, see:
   // https://thegraph.com/docs/en/developer/matchstick/#write-a-unit-test
 
-  test("CreatePost created and stored", () => {
-    assert.entityCount("CreatePost", 1)
+  test("Post created and stored", () => {
+    assert.entityCount("Post", 1)
 
     // 0xa16081f360e3847006db660bae1c6d1b2e17ec2a is the default address used in newMockEvent() function
     assert.fieldEquals(
-      "CreatePost",
+      "Post",
       "0xa16081f360e3847006db660bae1c6d1b2e17ec2a-1",
       "_author",
       "0x0000000000000000000000000000000000000001"
     )
     assert.fieldEquals(
-      "CreatePost",
+      "Post",
       "0xa16081f360e3847006db660bae1c6d1b2e17ec2a-1",
       "_title",
       "Example string value"
     )
     assert.fieldEquals(
-      "CreatePost",
+      "Post",
       "0xa16081f360e3847006db660bae1c6d1b2e17ec2a-1",
       "_media",
       "Example string value"

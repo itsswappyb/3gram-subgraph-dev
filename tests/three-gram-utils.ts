@@ -7,6 +7,7 @@ export function createCreatePostEvent(
   _title: string,
   _media: string
 ): CreatePost {
+  // @ts-ignore
   let createPostEvent = changetype<CreatePost>(newMockEvent())
 
   createPostEvent.parameters = new Array()
@@ -31,6 +32,7 @@ export function createCreateUserEvent(
   _bio: string,
   _avatar: string
 ): CreateUser {
+  // @ts-ignore
   let createUserEvent = changetype<CreateUser>(newMockEvent())
 
   createUserEvent.parameters = new Array()
@@ -53,3 +55,4 @@ export function createCreateUserEvent(
 
   return createUserEvent
 }
+
